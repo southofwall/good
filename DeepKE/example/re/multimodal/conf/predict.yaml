@@ -1,0 +1,15 @@
+seed: 1234
+
+bert_name: "/home/huang/代码/DeepKE/src/model/bert-base-uncased"
+vit_name: "/home/huang/代码/DeepKE/src/model/clip-vit-large-patch-32"
+device: cuda
+
+batch_size: 32
+
+max_seq: 61
+aux_size: 128
+rcnn_size: 64
+
+save_path: "best_model"
+load_path: Null
+a: "/home/huang/代码/DeepKE/example/re/multimodal/logs/2024-01-12_14-21-53/best_model/best_model.pth"
