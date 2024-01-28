@@ -543,7 +543,7 @@ class ScaledDotProductAttention(nn.Module):
 
     def forward(self, q, k, v):
         # 求g
-        g_fc1 = self.fc1(v)
+        g_fc1 = self.fc1(q)
         g_tanh = self.tanh(g_fc1)
         g_fc2 = self.fc2(g_tanh)
         g = g_fc2.squeeze()
@@ -559,6 +559,6 @@ class ScaledDotProductAttention(nn.Module):
         attn_weights = self.softmax(attn_scores)
         attn_weights = self.dropout(attn_weights)
         # output
-        attn_output = torch.matmul(attn_weights, v)
+        attn_output = torch.matmul(attn_weights, q)
 
         return attn_output, attn_weights
